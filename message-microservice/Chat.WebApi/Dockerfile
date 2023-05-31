@@ -4,10 +4,14 @@ EXPOSE 5000:80
 
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
-COPY ["Chat.WebApi.csproj", "."]
-RUN dotnet restore "./Chat.WebApi.csproj"
+
+COPY ["Chat.WebApi/Chat.WebApi.csproj", "Chat.WebApi/"]
+COPY ["Chat.Application/Chat.Application.csproj", "Chat.Application/"]
+COPY ["Chat.Data/Chat.Data.csproj", "Chat.Data/"]
+	
+RUN dotnet restore "./Chat.WebApi/Chat.WebApi.csproj"
 COPY . .
-WORKDIR "/src/."
+WORKDIR "/src/Chat.WebApi/."
 RUN dotnet build "Chat.WebApi.csproj" -c Release -o /app/build
 
 FROM build AS publish
