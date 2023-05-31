@@ -3,11 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33516.290
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chat.WebApi", "Chat.WebApi\Chat.WebApi.csproj", "{D8EB6F01-70DE-4917-B223-142AA8FC5F84}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Chat.WebApi", "Chat.WebApi\Chat.WebApi.csproj", "{D8EB6F01-70DE-4917-B223-142AA8FC5F84}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Chat.Data", "Chat.Data\Chat.Data.csproj", "{D154D249-81A5-486F-AC72-DAFA9AC27B1F}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Chat.Application", "Chat.Application\Chat.Application.csproj", "{44A13671-25DB-4822-9863-9438882365F6}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{350BC251-C209-4992-BC89-E84DE9D2C511}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{44A13671-25DB-4822-9863-9438882365F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{44A13671-25DB-4822-9863-9438882365F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{44A13671-25DB-4822-9863-9438882365F6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{350BC251-C209-4992-BC89-E84DE9D2C511}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{350BC251-C209-4992-BC89-E84DE9D2C511}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{350BC251-C209-4992-BC89-E84DE9D2C511}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{350BC251-C209-4992-BC89-E84DE9D2C511}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

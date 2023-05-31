@@ -1,0 +1,10 @@
+version: '3.4'
+
+services:
+  chat.webapi:
+    image: ${DOCKER_REGISTRY-}chatwebapi
+    build:
+      context: .
+      dockerfile: Chat.WebApi/Dockerfile
+    ports:
+      - "5000:80"
