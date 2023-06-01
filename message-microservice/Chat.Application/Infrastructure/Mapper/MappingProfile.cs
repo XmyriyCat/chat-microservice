@@ -1,9 +1,16 @@
 ﻿using AutoMapper;
+using Chat.Application.DTO.User;
+using Chat.Data.Models;
 
 namespace Chat.Application.Infrastructure.Mapper
 {
     public class MappingProfile : Profile
     {
-        // My maps
+        public MappingProfile()
+        {
+            CreateMap<User, UserOutputDto>();
+
+            CreateMap<CreateUserDto, User>();
+        }
     }
 }
