@@ -2,6 +2,8 @@ FROM mcr.microsoft.com/dotnet/aspnet:6.0 AS base
 WORKDIR /app
 EXPOSE 5000:80
 
+env ConnectionStrings:Db_Connection_String "host=postgres_db;port=5432;database=chatDb;username=admin;password=password"
+
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
 
