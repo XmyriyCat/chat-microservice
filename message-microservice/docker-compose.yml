@@ -31,3 +31,15 @@ services:
     networks:
       - docker-api
 
+  frontend:
+    image: chat-view
+    container_name: chat-view
+    build:
+      context: ../client/chat-app
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    depends_on:
+      - postgres_db
+      - chat.webapi
+
