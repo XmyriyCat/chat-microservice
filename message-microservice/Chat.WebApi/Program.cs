@@ -12,6 +12,8 @@ namespace Chat.WebApi
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
             builder.Services.ConfigurePostgresDb(builder.Configuration);
+            builder.Services.ConfigureAutoMapper();
+            builder.Services.ConfigureServiceScrutor();
 
             var app = builder.Build();
             

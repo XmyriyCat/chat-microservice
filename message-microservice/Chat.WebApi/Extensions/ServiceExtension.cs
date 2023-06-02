@@ -1,4 +1,6 @@
 ﻿using Chat.Application.Infrastructure.Mapper;
+using Chat.Application.Services.Contract;
+using Chat.Application.Services.Implementation;
 using Chat.Data.Context;
 using Chat.Data.UnitOfWork;
 using Microsoft.EntityFrameworkCore;
@@ -42,6 +44,13 @@ namespace Chat.WebApi.Extensions
                     // Configure data services
                     .FromAssemblyOf<IRepositoryWrapper>()
                     .AddClasses(classes => classes.InNamespaceOf<IRepositoryWrapper>())
+                    .UsingRegistrationStrategy(RegistrationStrategy.Skip)
+                    .AsImplementedInterfaces()
+                    .WithScopedLifetime()
+
+                    // Configure application services
+                    .FromAssemblyOf<MappingProfile>()
+                    .AddClasses(classes => classes.InNamespaceOf<UserCatalogService>())
                     .UsingRegistrationStrategy(RegistrationStrategy.Skip)
                     .AsImplementedInterfaces()
                     .WithScopedLifetime()
