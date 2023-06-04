@@ -32,12 +32,8 @@ namespace Chat.WebApi
             app.UseAuthorization();
             
             app.MapControllers();
-
-            app.UseEndpoints(endpoints =>
-            {
-                endpoints.MapHub<MessageHub>("/hubs/chat");
-            });
-
+            app.MapHub<MessageHub>("/hubs/chat");
+            
             await app.RunAsync();
         }
     }

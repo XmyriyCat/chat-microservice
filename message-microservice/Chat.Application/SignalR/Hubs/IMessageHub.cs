@@ -4,6 +4,8 @@ namespace Chat.Application.SignalR.Hubs
 {
     public interface IMessageHub
     {
-        Task ReceiveMessage(CreateMessageDto message);
+        Task ReceiveFullMessage(MessageOutputDto message);
+
+        Task ReceiveChatHistory(IEnumerable<MessageOutputDto> messages);
     }
 }
